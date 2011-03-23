@@ -86,7 +86,7 @@
     var leaves = [];
 
     forEach(object, function (value, key) {
-      if (typeof value === 'object' && !isArray(value)) {
+      if (value && typeof value === 'object' && !isArray(value)) {
         value = prefixKeys(value, key, delimiter || '.');
         leaves = leaves.concat(getLeaves(value, delimiter));
       } else {
