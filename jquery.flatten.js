@@ -14,7 +14,7 @@
    *
    * Returns true if object is an Array.
    */
-  isArray = Array.isArray ? Array.isArray : function () {
+  isArray = Array.isArray ? Array.isArray : function (object) {
     return Object.prototype.toString.call(object) === '[object Array]';
   };
 
@@ -64,7 +64,7 @@
     var prefixed = {};
 
     forEach(object, function (value, key) {
-      var key = [prefix, key].join(delimiter || '');
+      key = [prefix, key].join(delimiter || '');
       prefixed[key] = value;
     });
 
