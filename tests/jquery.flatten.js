@@ -42,6 +42,10 @@
     deepEqual(flatten(expanded, ':'), altFlattened);
   });
 
+  test('it should handle null properties as non objects', function () {
+    deepEqual(flatten({param: null}), {param: null});
+  });
+
   module('expand()');
 
   test('It should expand a flattened object into a deep structure', function () {
