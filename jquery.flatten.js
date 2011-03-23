@@ -1,3 +1,8 @@
+/*  Flatten jQuery Plugin - v0.1
+ *  Copyright 2011, Aron Carroll
+ *  Released under the MIT license
+ *  More Information: http://github.com/aron/jquery.flatten.js
+ */
 (function (exports, undefined) {
   var _flatten = exports.flatten,
       _expand  = exports.expand,
