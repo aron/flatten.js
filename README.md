@@ -54,7 +54,7 @@ Returns the flattened object.
 
 Without jQuery loaded on the page.
 
-    keypath(data);
+    flatten(data);
 
 jQuery.expand()
 ================
