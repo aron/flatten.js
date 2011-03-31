@@ -40,17 +40,15 @@ Returns the flattened object.
     };
 
     jQuery.flatten(data);
-    //=> Returns {
-    //     track: {
-    //       'track.name': 'Michelle',
-    //       'track.url': 'http://www.last.fm/music/The+Beatles/Rubber+Soul/Michelle',
-    //       'track.album.name': 'Rubber Soul'
-    //       'track.album.url': 'http://www.last.fm/music/The+Beatles/Rubber+Soul'
-    //       'track.album.tracks': 12
-    //       'track.artist.name': 'The Beatles',
-    //       'track.artist.url': 'http://www.last.fm/music/The+Beatles'
-    //     }
-    //   }
+    // => returns {
+    //   'track.name': 'Michelle',
+    //   'track.url': 'http://www.last.fm/music/The+Beatles/Rubber+Soul/Michelle',
+    //   'track.album.name': 'Rubber Soul'
+    //   'track.album.url': 'http://www.last.fm/music/The+Beatles/Rubber+Soul'
+    //   'track.album.tracks': 12
+    //   'track.artist.name': 'The Beatles',
+    //   'track.artist.url': 'http://www.last.fm/music/The+Beatles'
+    // }
 
 Without jQuery loaded on the page.
 
@@ -78,19 +76,17 @@ Returns the newly expanded object.
 ### Examples
 
     var data = {
-      track: {
-        'track.name': 'Michelle',
-        'track.url': 'http://www.last.fm/music/The+Beatles/Rubber+Soul/Michelle',
-        'track.album.name': 'Rubber Soul'
-        'track.album.url': 'http://www.last.fm/music/The+Beatles/Rubber+Soul'
-        'track.album.tracks': 12
-        'track.artist.name': 'The Beatles',
-        'track.artist.url': 'http://www.last.fm/music/The+Beatles'
-      }
-    }
+      'track.name': 'Michelle',
+      'track.url': 'http://www.last.fm/music/The+Beatles/Rubber+Soul/Michelle',
+      'track.album.name': 'Rubber Soul'
+      'track.album.url': 'http://www.last.fm/music/The+Beatles/Rubber+Soul'
+      'track.album.tracks': 12
+      'track.artist.name': 'The Beatles',
+      'track.artist.url': 'http://www.last.fm/music/The+Beatles'
+    };
 
     jQuery.expand(data);
-    //=> Returns data object as seen in flatten example above.
+    // => returns data object as seen in flatten example above.
 
 Without jQuery loaded on the page.
 
