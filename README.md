@@ -1,16 +1,12 @@
-jQuery.flatten()
-================
+flatten()
+=========
 
 Flattens a deeply nested object into a object containing only keys and
-values. Previously nested objects have the hieracy represented as
+values. Previously nested objects have the hierarchy represented as
 a keypath in their property key.
 
-_NOTE: This plugin is not dependant on jQuery. If included on a page where
-jQuery is not present it will simply add itself to the global object. In
-the case of a web browser the `window` object._
-
-jQuery.flatten(object [, delimiter])
-------------------------------------
+flatten(object [, delimiter])
+-----------------------------
 
 ### Parameters
 
@@ -39,7 +35,7 @@ Returns the flattened object.
       }
     };
 
-    jQuery.flatten(data);
+    flatten(data);
     // => returns {
     //   'track.name': 'Michelle',
     //   'track.url': 'http://www.last.fm/music/The+Beatles/Rubber+Soul/Michelle',
@@ -50,19 +46,20 @@ Returns the flattened object.
     //   'track.artist.url': 'http://www.last.fm/music/The+Beatles'
     // }
 
-Without jQuery loaded on the page.
+To use with node.js:
 
+    var flatten = require('flatten').flatten;
     flatten(data);
 
-jQuery.expand()
-================
+expand()
+========
 
 Expands a previously flattened object restoring keys with keypaths
 into full objects. Also accepts an optional `delimiter` to manually
 specify a keypath.
 
-jQuery.expand(object [, delimiter])
-------------------------------------
+expand(object [, delimiter])
+----------------------------
 
 ### Parameters
 
@@ -85,11 +82,12 @@ Returns the newly expanded object.
       'track.artist.url': 'http://www.last.fm/music/The+Beatles'
     };
 
-    jQuery.expand(data);
+    expand(data);
     // => returns data object as seen in flatten example above.
 
-Without jQuery loaded on the page.
+To use with node.js:
 
+    var expand = require('flatten').expand;
     expand(data);
 
 .noConflict()
@@ -100,9 +98,16 @@ them to another variable in the same way as `jQuery.noConflict()`.
 
 To assign the functions to another library (eg. Underscore):
 
+    // Extend underscore.js
     _.mixin({
       flattenObject: flatten.noConflict(),
       expandObject:  expand.noConflict()
+    });
+
+    // Extend jQuery
+    $.extend({
+      flatten: flatten.noConflict(),
+      expand:  expand.noConflict()
     });
 
 ### Licence

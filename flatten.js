@@ -1,7 +1,7 @@
-/*  Flatten jQuery Plugin - v0.1
+/*  Flatten.js - v0.1
  *  Copyright 2011, Aron Carroll
  *  Released under the MIT license
- *  More Information: http://github.com/aron/jquery.flatten.js
+ *  More Information: http://github.com/aron/flatten.js
  */
 (function (exports, undefined) {
   var _flatten = exports.flatten,
@@ -143,7 +143,7 @@
   flatten.noConflict = function () {
     exports.flatten = _flatten;
     return flatten;
-  }
+  };
 
   /* Public: Rebuilds a flattened object into a deeply nested
    * object. An optional delimiter can be provided.
@@ -204,5 +204,4 @@
   exports.flatten = flatten;
   exports.expand  = expand;
 
-})(this.jQuery || this);
-
+})(typeof exports !== 'undefined' ? exports : this);
