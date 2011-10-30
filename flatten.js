@@ -201,7 +201,12 @@
     return expand;
   };
 
-  exports.flatten = flatten;
-  exports.expand  = expand;
+  // Add support for AMD loaders otherwise export as normal.
+  if (typeof exports.define === 'function' && exports.define.amd) {
+    exports.define('flatten', {flatten: flatten, expand: expand});
+  } else {
+    exports.flatten = flatten;
+    exports.expand  = expand;
+  }
 
 })(typeof exports !== 'undefined' ? exports : this);

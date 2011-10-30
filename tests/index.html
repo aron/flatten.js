@@ -15,8 +15,26 @@
 	<ol id="qunit-tests"></ol>
 	<div id="qunit-fixture">test markup</div>
 	<script src="qunit/qunit.js"></script>
-	<script src="../flatten.js"></script>
+	<script src="../flatten.js" id="flatten-script"></script>
 	<script src="flatten-test.js"></script>
+	<script>
+    function define() {
+      define.called = true;
+      define.args = [].slice.call(arguments, 0);
+    }
+    define.amd = {};
+	</script>
+	<script src="../flatten.js" id="flatten-script"></script>
+	<script>
+    module('Support for AMD loader');
+
+    test('it should register the "flatten" module using define()', function () {
+      ok(window.define.called);
+      equal(window.define.args[0], 'flatten');
+      equal(typeof window.define.args[1].flatten, 'function');
+      equal(typeof window.define.args[1].expand, 'function');
+    });
+	</script>
 </body>
 </html>
 

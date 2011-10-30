@@ -71,5 +71,4 @@
     equal(expand.noConflict(), _expand);
     equal(this.expand, undefined);
   });
-
 }());
