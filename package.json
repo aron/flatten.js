@@ -1,0 +1,13 @@
+{
+  "author": "Aron Carroll <code@aroncarroll.com> (http://aroncarroll.com/)",
+  "name": "flatten",
+  "description": "Inflate and deflate nested objects",
+  "version": "0.1.0",
+  "homepage": "https://github.com/aron/flatten.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aron/flatten.js.git"
+  },
+  "main": "flatten.js",
+  "private": true
+}
