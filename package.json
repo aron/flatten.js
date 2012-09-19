@@ -8,6 +8,5 @@
     "type": "git",
     "url": "git://github.com/aron/flatten.js.git"
   },
-  "main": "flatten.js",
-  "private": true
+  "main": "flatten.js"
 }
